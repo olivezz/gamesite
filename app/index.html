@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <title>Game Face</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="_/css/tether.min.css">-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+</head>
+<body id="bs-overrides" ng-app="gameFace">
+<div id="lightback" class="menu-link lightback"></div>
+<nav id="mobile-menu" class="panel" role="navigation">
+    <div class="mmenu-head ">
+        <div class="close-mmenu row">
+            <div href="#menu" class="menu-link menu-close">
+                <span> </span>
+                <span> </span>
+                <span> </span>
+            </div>
+        </div>
+        <div class="row margin col-sm-12 text-xs-center">
+            <img src="assets/images/game-face-logo-mobile-menu.png">
+        </div>
+    </div>
+    <div class="list-group">
+        <a href="#" class="list-group-item">Home</a>
+        <a href="#" class="list-group-item">Features</a>
+        <a href="#" class="list-group-item">Pricing</a>
+        <a href="#" class="list-group-item">FAQs</a>
+        <a href="#" class="list-group-item">About</a>
+        <a href="#" class="list-group-item">For Teams</a>
+    </div>
+</nav>
+<header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-light navbar-fixed-top bg-faded p-t-1" role ="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header hidden-md hidden-lg">
+                <div href="#mobile-menu" class="menu-link pull-sm-left pull-xs-left">
+                    <span> </span>
+                    <span> </span>
+                    <span> </span>
+                </div>
+                <a class="navbar-brand col-xs-offset-2 col-sm-5" href="#">
+                    <img class="pull-sm-right" src="assets/images/game-face-logo-mobile.png">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="large-nav hidden-sm hidden-xs">
+                <a class="navbar-brand" href="#"><img src="assets/images/game-face-logo-desktop.png"></a>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="nav-item active"><a class="nav-link" ng-href="#/home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#mission">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#staff">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">About</a></li>
+                    <li class="nav-item"><a class="nav-link" ng-href="#/team">For Teams</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div data-ng-view></div>
+
+<footer>
+    <div class="container">
+        <div class="row m-y-2">
+            <div class="col-lg-6">
+                <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+            </div>
+            <div class="col-lg-6">
+                <p class="text-muted small text-xs-left text-md-right"><a class="light-link" href="mailto:">info@getgameface.com</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery first, then Bootstrap JS. -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="src/helpers/jquery.big-slide.js"></script>
+<script src="src/helpers/script.js"></script>
+
+<!-- Angular -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="gameface.module.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79393939-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

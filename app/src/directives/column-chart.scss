@@ -1,0 +1,104 @@
+.chart-container {
+    width: 100%;
+    max-width: 1057px;
+    margin: 0 auto;
+    position: relative;
+    left: 18px;
+    .column-chart {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        display: flex;
+        height: 102px;
+    }
+    .bar-container{
+        position: relative;
+        height: 100px;
+        width: 9.57px;
+        margin-right: 1px;
+        &:hover{
+            background-color: #fbfbfb;
+            .chart-toolTip {
+                display: block;
+            }
+        }
+    }
+    .bar {
+        background: #47bac1;
+        width: 9.57px;
+        margin-right: 1px;
+        position: relative;
+        max-height: 50px;
+        &:last-child {
+            margin-right: -1px;
+        }
+    }
+}
+.google-visualization-tooltip {
+    width: 150px;
+    padding: 8px 2px;
+}
+.chart-toolTip {
+    position: absolute;
+    top: -20px;
+    left: -60px;
+    background: #fff;
+    width: 120px;
+    padding: 2px;
+    z-index: 2;
+    display: none;
+    text-align: center;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    &:before{
+        content: '';
+        position: absolute;
+        bottom:-3px;
+        left:49%;
+        transform: rotate(45deg);
+        width: 0px;
+        height:0px;
+        border: 3px solid #fff;
+        box-shadow: 1px 1px 0px #ccc;
+    }
+    .ordinal {
+        font-family: OpenSans;
+        font-size: 10px;
+        color: #131313;
+        font-style: normal;
+        span {
+            font-family: RobotoBold;
+            font-size: 11px;
+            color: #47555f;
+            font-style: normal;
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+    .debt-removed {
+        font-family: OpenSans;
+        font-size: 9px;
+        color: #607d8b;
+        font-style: normal;
+        position: relative;
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 8px;
+            height: 0px;
+            border-top: 1px solid #607d8b;
+        }
+        &:before {
+            left: 7px;
+        }
+        &:after {
+            right: 7px;
+        }
+    }
+    .duration {
+        font-family: OpenSansBold;
+        font-size: 10px;
+        color: #131313;
+        font-style: normal;
+    }
+}

@@ -1,0 +1,55 @@
+<div class="blacklist">
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Excluded Domains</h1>
+        </div>
+
+        <form class="form-inline excluded-form" data-ng-submit="vm.create()">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="New Domain"
+                       data-ng-model="vm.newName">
+            </div>
+            <button type="submit" class="btn btn-primary">Exclude</button>
+        </form>
+
+        <div class="table-responsive excluded-table">
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Domains</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(key, blackItem ) in vm.blacklistDomains track by $index">
+                    <td>{{key+1}}</td>
+                    <td>
+                        <span>{{blackItem.domain}}</span>
+                        <form ng-submit="vm.update(key)" class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control"
+                                       data-ng-model="vm.updatedName">
+                            </div>
+                            <!-- /.form-group -->
+                            <a ng-click="vm.edit(key)" class="btn btn-default">cancel</a>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </form>
+                    </td>
+                    <td class="table-actions">
+                        <a ng-click="vm.edit(key)" tooltip-placement="top" uib-tooltip="Edit">
+                            <i class="glyphicon glyphicon-edit"></i>
+                        </a>
+                        <a ng-click="vm.remove(key)" tooltip-placement="top" uib-tooltip="Delete">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.container -->
+</div>

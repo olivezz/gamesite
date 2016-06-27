@@ -1,0 +1,200 @@
+
+/*==========  Non-Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+  #bs-overrides h1 {
+    font-size: $h1-laptop;
+    line-height: 1.02;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+  #bs-overrides h1 {
+    font-size: $h1-tablet;
+    line-height: 1.4;
+  }
+  #bs-overrides h2 {
+    font-size: $h2-tablet ;
+    line-height: 1.4;
+  }
+
+  .head-content {
+    .container {
+      padding: 0;
+
+      .slogan {
+        margin-top: $slogan-head-mobile-mg;
+      }
+      .mail-form {
+        margin: $mail-form-tablet;
+      }
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+  header {
+    .navbar {
+      height: $nav-mobile-height;
+      padding-top: 14px;
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+  body {
+    overflow-x:hidden;
+  }
+  #bs-overrides h1 {
+    font-size: $h1-mobile ;
+    line-height: 1.4;
+  }
+  #bs-overrides h2 {
+    font-size: $h2-mobile ;
+    line-height: 1.4;
+  }
+  #bs-overrides h4 {
+    font-size: $h4-mobile ;
+    line-height: 1.4;
+  }
+  .header-bgimage {
+    height: $top-header-mob-height;
+  }
+
+  header {
+    .navbar {
+      .navbar-logo-m {
+        margin-right: 15px;
+      }
+    }
+  }
+
+
+  .head-content {
+    padding: 0;
+    .container {
+
+      .slogan {
+        margin-top: $slogan-head-mobile-mg;
+        padding: 0 15px;
+      }
+      .mail-form {
+        padding: 15px;
+      }
+    }
+  }
+
+  .home-spots {
+    .container {
+      padding: 0;
+      .awsome-spot {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  #mobile-menu {
+    .list-group {
+      padding-left: 0;
+      height: 415px;
+      overflow-y: scroll;
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 330px) {
+
+  #bs-overrides h1 {
+    font-size: $h1-s-mobile ;
+    line-height: 1.1!important;
+  }
+  #bs-overrides h2 {
+    font-size: $h2-s-mobile ;
+    line-height: 1.4;
+  }
+  #bs-overrides h4 {
+    font-size: $h4-mobile ;
+    line-height: 1.4;
+  }
+  .header-bgimage {
+    height: $top-header-mob-height;
+  }
+  header {
+    .navbar-logo-m {
+      margin-left: 14px ;
+    }
+  }
+
+  .head-content {
+    padding: 0;
+    .container {
+      padding: 0;
+      .slogan {
+        margin-top: $slogan-head-s-mobile-mg;
+        padding: 0 15px;
+      }
+      .mail-form {
+        margin: 0 ;
+        padding: 15px;
+      }
+    }
+  }
+
+  .home-spots {
+    .container {
+      padding: 0;
+      .awsome-spot {
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .feature-content {
+    .container {
+      padding: 0;
+      .focus-point {
+        img {
+          max-width: 15%;
+          height: auto;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+// Small devices (landscape phones, less than 48em, 768px)
+/*@media only screen and (min-width: 768px) {
+  header {
+    .navbar {
+      height: $nav-mobile-height;
+      padding-top: 14px;
+    }
+  }
+  .head-content {
+    .container {
+      .mail-form {
+        margin: 130px 0 60px 0 ;
+        padding: 15px ;
+      }
+    }
+  }
+  .home-spots {
+    .container {
+      padding: 0;
+      .awsome-spot {
+        margin-top: 0px;
+      }
+    }
+  }
+}*/
+
+// Small devices (landscape phones, less than 48em, 768px)
+
