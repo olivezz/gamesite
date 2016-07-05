@@ -24,7 +24,7 @@ body {
   text-align: center;
   font-family: $head-font;
   font-size: $h2-size;
-  color: $dark-blue;
+  color: $dark-gray;
   line-height: 0.9;
   font-weight: 500;
 }
@@ -35,7 +35,6 @@ body {
   line-height: 1.4;
 }
 #bs-overrides h5 {
-  line-height: 1.4;
   font-family: $regular-font;
   font-size: $h5-size;
   color: black;
@@ -116,15 +115,22 @@ header {
         line-height: 1.5;
         color: #55595c;
         border: 0;
-        border-bottom: 2px solid #ccc;
+        border-bottom: 2px solid #ccc;;
         border-radius: $radius;
+
+        &:focus {
+          border-color: $dark-blue;
+          webkit-box-shadow: 0;
+          box-shadow: 0;
+
+        }
       }
-      .mce_inline_error {
-        border-color:$error;
+      .has-error {
+        border-bottom: 2px solid $error;
       }
       .mce_inline_error {
         margin: 0;
-
+        border-bottom: 2px solid $error;
         z-index: 1;
       }
       .help-block {
@@ -173,6 +179,13 @@ header {
   .share-text {
     text-align: center !important;
   }
+
+  #mobilehand-img {
+    padding: 0px;
+  }
+  #stream-sec {
+    padding: 60px;
+  }
 }
 
 .feature-content {
@@ -183,15 +196,35 @@ header {
       height: 60px;
     }
   }
-  button {
-    width: 380px;
-    height: 79px;
-    background-color: $light-blue;
-    align-items: center;
-    border: 0;
-    font-size: 21px;
-    margin: 60px 0;
+}
+
+.wide-light-btn {
+  background-color: $light-blue;
+  align-items: center;
+  border: 0;
+  font-size: 21px;
+  padding: 25px;
+  margin: 60px 0;
+}
+
+.team-feature {
+  background-color: $gray-bg;
+  margin-top: -175px;
+  #featues {
+    .focus-point {
+      display: inline-block;
+      width: 100%;
+      height: 60px;
+    }
   }
+}
+
+.blue-title {
+  display: block;
+  font-size: 32px;
+  font-weight: 900;
+  color: $dark-blue;
+  margin: 50px 0;
 }
 
 .light-link {
@@ -245,6 +278,9 @@ footer {
 }
 .panel {
   background-color: $white;
+  position: fixed;
+  left: -15.625em; /*right or left and the width of your navigation panel*/
+  width: 15.625em; /*should match the above value*/
 
 }
 
@@ -312,8 +348,8 @@ footer {
   position: absolute;
   top: 0%;
   left: 0%;
-  width: 100%;
-  height: 100%;
+  width: 3000px;
+  height: 10000px;
   background-color: #000000;
   z-index:999;
   -moz-opacity: 0.8;

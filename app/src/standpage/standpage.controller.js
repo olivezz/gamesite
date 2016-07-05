@@ -3,17 +3,16 @@
 
     angular
         .module('gameFace')
-        .controller('HomeController', HomeController);
+        .controller('StandController', StandController);
 
-    HomeController.$inject = ['$rootScope'];
+    StandController.$inject = ['$rootScope'];
 
     /* @ngInject */
-    function HomeController($rootScope) {
+    function StandController($rootScope) {
 
         $rootScope.pageName ='Game Face';
         $rootScope.loggedIn = false;
         //console.log($rootScope);
-
     }
 
 }());

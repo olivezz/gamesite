@@ -1,0 +1,58 @@
+<div ng-controller="HeaderWebController as vm">
+    <div id="lightback" class="lightback"></div>
+    <nav id="mobile-menu" class="panel" role="navigation">
+        <div class="mmenu-head">
+            <div class="close-mmenu row">
+                <div href="#menu" class="evt-menu-link menu-link menu-close">
+                    <span> </span>
+                    <span> </span>
+                    <span> </span>
+                </div>
+            </div>
+            <div class="row col-sm-12 text-center">
+                <img src="assets/images/game-face-logo-mobile-menu.png">
+            </div>
+        </div>
+        <div class=" list-group">
+            <a ng-href="#/home" onclick="closeMenu(this)" class="list-group-item">Home</a>
+            <a ng-href="#/features" class=" list-group-item">Features</a>
+            <a ng-href="#/pricing" class=" list-group-item">Pricing</a>
+            <a ng-href="#/faq" class=" list-group-item">FAQs</a>
+            <a ng-href="#/gamevideos" class=" list-group-item">About</a>
+            <a ng-href="#/teamweb" class=" list-group-item">For Teams</a>
+        </div>
+    </nav>
+    <header>
+        <!-- Navigation -->
+        <nav class="navbar navbar-light navbar-fixed-top bg-faded p-t-2" role ="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header hidden-sm hidden-md hidden-lg">
+                    <div href="#mobile-menu" class="evt-menu-link menu-link col-xs-offset-1 pull-left">
+                        <span> </span>
+                        <span> </span>
+                        <span> </span>
+                    </div>
+                    <a class="navbar-logo-m col-xs-offset-1 col-xs-8 pull-right" ng-href="#/home">
+                        <img src="assets/images/game-face-logo-mobile.png">
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="large-nav hidden-xs">
+                    <a class="navbar-logo" href="#"><img src="assets/images/game-face-logo-desktop.png"></a>
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="nav-item active"><a class="nav-link" ng-href="#/home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" ng-href="#/features">Features</a></li>
+                        <li class="nav-item"><a class="nav-link" ng-href="#/pricing">Pricing</a></li>
+                        <li class="nav-item"><a class="nav-link" ng-href="#/faq">FAQs</a></li>
+                        <li class="nav-item"><a class="nav-link" ng-href="#/gamevideos">About</a></li>
+                        <li class="nav-item"><a class="nav-link" ng-href="#/teamweb">For Teams</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</div>
+
+<script src="src/helpers/jquery.big-slide.js"></script>
+<script src="src/helpers/script.js"></script>

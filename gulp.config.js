@@ -9,6 +9,7 @@ module.exports = function () {
             ],
             filesToInject:[
                 './app/src/**/*.js',
+                '!./app/src/helpers/*.js',
                 '!./app/src/**/*.spec.js',
                 './app/assets/css/main.css'
             ],

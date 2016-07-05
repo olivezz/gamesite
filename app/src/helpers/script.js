@@ -2,9 +2,13 @@
 $(document).ready( function () {
 
     /// Mobile menu ////////////////////////
-    $('.menu-link').bigSlide();
-    $('#lightback').height($(document).height());
-    $('#lightback').width($(document).width());
+    $('.evt-menu-link').bigSlide();
+
+
+    $('.list-group-item').click(function() {
+        $(".menu-close").trigger("click");
+    });
+
     ////////////////////////////////////////////////
-    
+
 });

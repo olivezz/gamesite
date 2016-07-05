@@ -57,14 +57,14 @@
             'speed': '300',
             'state': 'closed',
             'activeBtn': 'active',
-            'easyClose': false,
+            'easyClose': true,
             'saveState': false,
             'semiOpenStatus': false,
             'semiOpenScreenWidth': 480,
             'beforeOpen': function () {$( "#mobile-menu" ).css( "display", "block" );},
-            'afterOpen': function() { $( "body" ).css( "overflow-y", "hidden" ); $('#lightback').width($(document).width()); $( "#lightback" ).css( "display", "block" );},
+            'afterOpen': function() { $("html").css("overflow", "hidden"); $( "body" ).css( "overflow-y", "hidden" ); $('#lightback').width($(document).width()); $( "#lightback" ).css( "display", "block" );},
             'beforeClose': function() {},
-            'afterClose': function() { $( "body" ).css( "overflow-y", "scroll" ); $( "#lightback" ).css( "display", "none" );}
+            'afterClose': function() { $("html").css("overflow", "scroll"); $( "body" ).css( "overflow-y", "scroll" ); $('#lightback' ).css( "display", "none" );}
         }, options);
 
         // CSS properties set by bigSlide.js on all implicated DOM elements
@@ -292,7 +292,7 @@
                 settings.beforeOpen();
                 controller.changeState();
                 view.applyOpenStyles();
-                menuLink.addClass(settings.activeBtn);
+                //menuLink.addClass(settings.activeBtn);
                 settings.afterOpen();
 
                 // save the state

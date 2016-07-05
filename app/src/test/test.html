@@ -1,0 +1,33 @@
+<div class="blacklist"><br><br><br><br>
+
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Excluded Domains</h1>
+        </div>
+        <div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Domains</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(key, blackItem ) in vm.eventItems track by $index">
+                    <td>{{key+1}}</td>
+                    <td>
+                        <span ng-model="event.name">{{blackItem.name}}</span>
+
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+            {{vm.eventItems[0].name}}
+        </div>
+        <!-- /.table-responsive -->
+    </div>
+    <!-- /.container -->
+</div>
