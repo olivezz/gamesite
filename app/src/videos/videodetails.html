@@ -1,0 +1,37 @@
+<br><br><br><br>
+
+<button ng-click="vm.selection='details'" ng-class="{active:vm.selection==='details'}" class="btn btn-primary" > show Team </button>
+<button ng-click="vm.selection='update'" ng-class="{active:vm.selection==='update'}" class="btn btn-primary"> Edit Team </button>
+
+<div class="container">
+    <div style="padding-left:20px; padding-right:20px">
+        <div id="me">
+            <div class="row">
+                <div class="span11">
+                    <h2>watch Video
+                        <br>{{vm.Video.team1}} VS {{vm.Video.team2}}
+                    </h2><br>
+                    <p>{{vm.Video.date}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <video  controls>
+                    <source data-ng-src="uploads/videos/oakville-rangers.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <h3>Related Videos</h3>
+            <div class="row p-y-2" ng-repeat="clip in vm.Video.clips track by $index">
+                <div class="col-xs-3"><img data-ng-src="{{clip.thumb}}"></div>
+                <div class="col-xs-9">
+                    <p>{{clip.owner}}</p>
+                    <h3>{{clip.description}}</h3>
+                    <p>{{clip.time}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
