@@ -4,14 +4,14 @@
 
     angular
         .module('gameFace')
-        .controller('TeamController', TeamController);
+        .controller('TeamWebController', TeamWebController);
 
-    TeamController.$inject = ['$rootScope'];
+    TeamWebController.$inject = ['$rootScope', '$route'];
 
     /* @ngInject */
-    function TeamController($rootScope) {
+    function TeamWebController($rootScope, $route) {
 
-        $rootScope.pageName ='Team page';
+        $rootScope.pageName = $route.current.pageTitle;
         $rootScope.loggedIn = false;
 
     }

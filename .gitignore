@@ -4,7 +4,12 @@ coverage/
 node_modules/
 bower_components/
 app/bower_components/
-app/src/test
+app/data/
+app/uploads/
+app/src/test/
+app/src/blacklist/
+app/src/cache/
+test_files/
 tmp
 .DS_Store
 .idea

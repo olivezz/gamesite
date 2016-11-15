@@ -12,6 +12,8 @@ var args = require('yargs').argv;
  */
 var $ = require('gulp-load-plugins')({lazy: true});
 
+const autoprefixer = require('gulp-autoprefixer');
+
 var config = require('./gulp.config')();
 
 var proxy = require('http-proxy-middleware');
@@ -61,6 +63,18 @@ gulp.task('connect', function () {
         livereload: true,
         fallback: './app/index.html'
     });
+});
+/*********************************************************/
+gulp.task('autoprefixer', function () {
+    var postcss      = require('gulp-postcss');
+    var sourcemaps   = require('gulp-sourcemaps');
+    var autoprefixer = require('autoprefixer');
+
+    return gulp.src('./app/assets/css/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('./dest'));
 });
 /*********************************************************/
 gulp.task('open', ['connect'], function () {

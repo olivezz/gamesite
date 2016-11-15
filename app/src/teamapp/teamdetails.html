@@ -1,0 +1,113 @@
+<br><br><br><br>
+
+<md-button ng-click="vm.selection='details'" ng-class="{active:vm.selection==='details'}"> Show Team </md-button>
+<md-button  ng-click="vm.selection='update'" ng-class="{active:vm.selection==='update'}"> Edit Team </md-button>
+
+<div class="inset toastdemoBasicUsage animate-switch-container" ng-switch on="vm.selection">
+
+    <div ng-switch-when="details" class="animate-switch container">
+        <div style="padding-left:20px; padding-right:20px">
+            <div id="me">
+                <img data-ng-src="{{vm.Team.imageUrl}}" alt="{{vm.Team.name}}"/>
+                <br />
+
+                <div class="row">
+                    <div class="span11">
+                        <h2>{{vm.Team.name}} <span>{{vm.Team.date}}</span>
+                            <br>Sport : {{vm.Team.sport}}
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span4">
+                        <address>
+                            <strong>Address:</strong><br/>
+                            {{vm.Team.location.address}}<br/>
+                            {{vm.Team.location.city}}, {{vm.Team.location.province}}
+                        </address>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <video  controls>
+                        <source src="uploads/videos/oakville-rangers.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <h3>schedules</h3>
+
+                <div class="table-responsive excluded-table">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Opponent</th>
+                            <th>Arena</th>
+                            <th>Final Score</th>
+                            <th>Videos</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="schedule in vm.Team.schedules track by $index" class="span11" id="schedule{{schedule.id}}">
+                            <td>{{schedule.id+1}}</td>
+                            <td>
+                                <span>{{schedule.date}}</span>
+                            </td>
+                            <td>
+                                <span>{{schedule.time}}</span>
+                            </td>
+                            <td>
+                                <span>{{schedule.opponent}}</span>
+                            </td>
+                            <td>
+                                <span>{{schedule.arena}}</span>
+                            </td>
+                            <td>
+                                <span>{{schedule.score}}</span>
+                            </td>
+                            <td>
+                                <a ng-href="#/videos/{{schedule.id}}">2 Full Game, 30 Clip</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div ng-switch-when="update" class="animate-switch container" >
+        <h2>Edit Team</h2>
+
+        <form name="editTeamForm" ng-submit="editTeamForm.$valid && vm.create(vm.Team, editTeamForm)">
+            <md-input-container class="md-block">
+                <label>TEAM NAME</label>
+                <input md-maxlength="30" required md-no-asterisk id="iname" name="fname" ng-model="vm.Team.name">
+                <div ng-messages="editTeamForm.fname.$error">
+                    <div ng-message="required">This is required.</div>
+                    <div ng-message="md-maxlength">The name has to be less than 30 characters long.</div>
+                </div>
+                <team-directive />
+            </md-input-container>
+            <md-input-container class="md-block">
+                <label>SPORT</label>
+                <input required md-no-asterisk id="isport" name="sport" ng-model="vm.Team.sport">
+                <div ng-messages="editTeamForm.sport.$error">
+                    <div ng-message="required">This is required.</div>
+                </div>
+            </md-input-container>
+            <md-datepicker required id="idate" name="date" md-placeholder="format (mm/dd/yyyy)..." ng-model="vm.Team.date">
+            </md-datepicker>
+
+            <br />
+            <br />
+
+            <md-button type="submit" class="md-raised md-primary">Save</md-button>
+            <md-button type="button" class="md-raised md-warn" ng-click="vm.selection='details'">Cancel</md-button>
+        </form>
+    </div>
+</div>

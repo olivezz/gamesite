@@ -1,7 +1,7 @@
 {
   "name": "leaderboardUnitTest",
   "authors": [
-    "mohammed ramadan <mohammed.ramadan@aurea.com>"
+    "Bassem Zaitoun"
   ],
   "description": "code quality ranking",
   "main": "",
@@ -30,7 +30,8 @@
     "bootstrap": "^3.3.6",
     "angular-nvd3": "^1.0.7",
     "d3": "^3.5.17",
-    "nvd3": "^1.8.3"
+    "nvd3": "^1.8.3",
+    "angular-material": "^1.0.9"
   },
   "resolutions": {
     "jquery": "3.0.0"

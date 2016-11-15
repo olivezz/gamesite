@@ -18,7 +18,10 @@
         return service;
 
         function get() {
-            var videos = [
+            return $http.get('/data/1.json')
+                .then(successCallback)
+                .catch(errorCallback);
+            /*var videos = [
                 {
                     id: 1,
                     name: 'game1',
@@ -29,11 +32,11 @@
             ];
             var deferred = $q.defer();
             deferred.resolve(videos);
-            return deferred.promise;
+            return deferred.promise;*/
         }
 
-        function update(id, value) {
-            return $http.patch('/leaderboard/blacklists/' + id,
+        function create(value) {
+            return $http.post('/gameface/videos/',
                 {
                     domain: value
                 }
@@ -41,8 +44,8 @@
                 .catch(errorCallback);
         }
 
-        function create(value) {
-            return $http.post('/leaderboard/blacklists/',
+        function update(id, value) {
+            return $http.patch('/gameface/videos/' + id,
                 {
                     domain: value
                 }
@@ -51,7 +54,7 @@
         }
 
         function remove(id) {
-            return $http.delete('/leaderboard/blacklists/' + id)
+            return $http.delete('/gameface/videos/' + id)
                 .then(function (result) {
                     return result;
                 })
@@ -59,6 +62,7 @@
         }
 
         function successCallback(result) {
+            console.log(result);
             return result.data;
         }
 

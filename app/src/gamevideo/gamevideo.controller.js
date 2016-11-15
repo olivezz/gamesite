@@ -3,16 +3,25 @@
 
     angular
         .module('gameFace')
-        .controller('GameFaceController', GameFaceController);
+        .controller('VideoController', VideoController);
 
-    GameFaceController.$inject = ['gameVideoData'];
+    VideoController.$inject = ['gameVideoData'];
 
     /* @ngInject */
-    function GameFaceController(gameVideoData) {
+    function VideoController(gameVideoData) {
 
         var vm = this;
         vm.Videos = [];
-        
+
+        vm.video = {
+            name: '',       //string
+            type: '',       //video_type
+            size: '',       //integer
+            noOfViews: '',  //integer
+            created:  ''    //Timestamp
+        }
+
+
         vm.remove = remove;
         vm.update = update;
         vm.create = create;
@@ -20,12 +29,12 @@
 
         activate();
 
-        function remove(key) {
-            var blackItem = vm.blacklistDomains[key];
-            blacklistData.remove(blackItem.id)
+        function create() {
+            gameVideoData.create(vm.newName)
                 .then(function (result) {
-                    if (result.status === 204) {
-                        vm.blacklistDomains.splice(key, 1);
+                    if (result.id && vm.newName === result.domain) {
+                        vm.blacklistDomains.unshift(result);
+                        vm.newName = '';
                     }
                 });
         }
@@ -41,12 +50,12 @@
                 });
         }
 
-        function create() {
-            blacklistData.create(vm.newName)
+        function remove(key) {
+            var videoItem = vm.blacklistDomains[key];
+            videoData.remove(blackItem.id)
                 .then(function (result) {
-                    if (result.id && vm.newName === result.domain) {
-                        vm.blacklistDomains.unshift(result);
-                        vm.newName = '';
+                    if (result.status === 204) {
+                        vm.blacklistDomains.splice(key, 1);
                     }
                 });
         }
@@ -63,6 +72,9 @@
             gameVideoData.get()
                 .then(function (result) {
                     vm.Videos = result;
+                })
+                .catch(function (error) {
+                    consol.log(error);
                 });
         }
     }

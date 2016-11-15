@@ -5,12 +5,12 @@
         .module('gameFace')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$rootScope'];
+    HomeController.$inject = ['$rootScope', '$route'];
 
     /* @ngInject */
-    function HomeController($rootScope) {
+    function HomeController($rootScope, $route) {
 
-        $rootScope.pageName ='Game Face';
+        $rootScope.pageName = $route.current.pageTitle;
         $rootScope.loggedIn = false;
         //console.log($rootScope);
 

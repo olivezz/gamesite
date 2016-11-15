@@ -10,14 +10,13 @@
     /* @ngInject */
     function TeamData($resource, $q) {
 
-        var resource = $resource('/data/team/:id', {id: '@id'});
+        var resource = $resource('/data/team/:id.json', {id: '@id'});
         return {
-            getTeam: function () {
+            getTeam: function (id) {
                 var deferred = $q.defer();
-                console.log('teamData.getTeam()');
                 resource
                     .get(
-                        {id: 1},
+                        {id: id},
                         function (team) {
                             deferred.resolve(team);
                         },
@@ -25,13 +24,11 @@
                             deferred.reject(response);
                         }
                     );
-                var promise = deferred.promise;
-                console.log(promise);
-                return promise;
+                return deferred.promise;
             },
             save: function (team) {
                 var deferred = $q.defer();
-                team.id = 999; // we just fake the team id, it'll be saved to disk
+                team.id = 2; // we just fake the team id, it'll be saved to disk
                 resource.save(
                     team,
                     function (response) {

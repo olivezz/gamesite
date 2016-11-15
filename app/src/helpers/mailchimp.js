@@ -1,8 +1,8 @@
 
 $(document).ready( function () {
 
-    $('#mc-embedded-subscribe-form').validator().on('submit', function (e) {
-        //$('#mc-embedded-subscribe-form').submit(function(e) {
+    $('#mcform').validator().on('submit', function (e) {
+        //$('#mcform').submit(function(e) {
 
         if (e.isDefaultPrevented()) {
             var inputs = $(e.delegateTarget).children().find('input');
@@ -34,7 +34,7 @@ $(document).ready( function () {
                             // It worked, carry on...
                             $('.form-msg').css( "color", "#24c507" ); //green
                             $('.form-msg').html(data.msg);
-                            $('#mc-embedded-subscribe-form').css("display", "none");
+                            $('#mcform').css("display", "none");
                             if($( window ).width() < 544) {
                                 // Do it if mobile view
                                 $('.feature-content').css("margin-top", "200px");

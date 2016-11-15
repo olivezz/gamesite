@@ -1,13 +1,11 @@
 
-'use strict';
-
 (function () {
+    'use strict';
 
-
-    angular
+    var myApp = angular
         .module('gameFace', [
             /* angular modules */
-            'ngRoute'
+            'ngRoute', 'ngResource', 'ngAnimate', 'ngMaterial', 'ngMessages'
 
             /* third party modules */
         ])
@@ -17,7 +15,8 @@
                 .when('/home', {
                     templateUrl: './src/home/home.html',
                     controller: 'HomeController',
-                    controllerAs: 'vm'
+                    controllerAs: 'vm',
+                    pageTitle: 'Game Face'
                 })
                 .when('/features', {
                     templateUrl: 'src/standpage/features.html',
@@ -35,24 +34,38 @@
                     controllerAs: 'vm'*/
                 })
                 .when('/teamweb', {
-                    templateUrl: 'src/team/teamweb.html',
-                    controller: 'TeamController',
-                    controllerAs: 'vm'
+                    templateUrl: 'src/teamweb/teamweb.html',
+                    controller: 'TeamWebController',
+                    controllerAs: 'vm',
+                    pageTitle: 'Team Page'
                 })
                 .when('/test', {
-                    templateUrl: './src/test/test.html',
-                    controller: 'TestController',
+                    templateUrl: 'src/teamapp/teamdetails.html',
+                    controller: 'TeamController',
+                    controllerAs: 'vm',
+                    pageTitle: 'Team Schedule'
+                })
+                .when('/videos/:videoId', {
+                    templateUrl: 'src/videos/videodetails.html',
+                    controller: 'VideoController',
                     controllerAs: 'vm'
                 })
+                /*.when('/cache', {
+                    templateUrl: 'src/cache/cache.html',
+                    controller: 'CacheController',
+                    controllerAs: 'vm'
+                })*/
                 .when('/gamevideos', {
-                    templateUrl: './src/gamevideo/video.html',
-                    controller: 'GameFaceController',
+                    templateUrl: 'src/gamevideo/video.html',
+                    controller: 'VideoController',
                     controllerAs: 'vm'
                 })
                 .otherwise({redirectTo: '/home'});
+
         })
+
         /*.run(function ($rootScope){
           $rootScope.pageName = 'Home page';
-        })*/
-    ;
+        })*/;
+
 }());

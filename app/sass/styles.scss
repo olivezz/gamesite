@@ -358,7 +358,56 @@ footer {
 }
 
 
+/* Swicth Animation */
+.animate-switch-container {
+  position:relative;
+  background:white;
+  border:1px solid black;
+  height:600px;
+  overflow: auto;
+}
 
+.animate-switch {
+  padding:10px;
+}
+
+.animate-switch.ng-animate {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+.animate-switch.ng-leave.ng-leave-active,
+.animate-switch.ng-enter {
+  top:500px;
+}
+.animate-switch.ng-leave,
+.animate-switch.ng-enter.ng-enter-active {
+  top:0;
+}
+
+/*.ng-invalid.ng-dirty {
+  border-color: #FA787E;
+}
+.ng-valid.ng-dirty {
+  border-color: #78FA89;
+}*/
+
+//// Toast ///////////////////
+md-toast.md-success-toast-theme {
+  .md-toast-content {
+    background-color: green;
+  }
+}
+md-toast.md-error-toast-theme {
+  .md-toast-content {
+    background-color: red;
+  }
+}
 
 
 //@import "../../../node_modules/font-awesome/scss/font-awesome";

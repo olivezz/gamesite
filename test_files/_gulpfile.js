@@ -14,7 +14,7 @@ var pluginsOptions = {
 };
 var $ = require('gulp-load-plugins')(pluginsOptions);
 var runSequence = require('run-sequence');
-var config = require('./gulp.config')();
+var config = require('./_gulp.config.js')();
 var del = require('del');
 
 var serverRoot = './app';

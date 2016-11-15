@@ -6,44 +6,59 @@
                 <span class="light-blue">IMPROVE</span> YOUR PLAYERS.
                 <span class="light-blue">STREAM</span> LIVE GAMES.</h1>
         </div>
-        <div class="mail-form col-xs-12 col-sm-12 col-md-5 col-lg-5 p-x-2 p-y-3 m-b-3">
+        <div class="mail-form col-xs-12 col-sm-12 col-md-5 col-lg-5 p-x-2 p-y-2">
             <p class="form-msg m-b-1">
                 Game Face is in private beta. As an early adopter, register now and receive 3 months free when we go live.
             </p>
-            <form action="http://getgameface.us13.list-manage1.com/subscribe/post" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" data-toggle="validator" role="form">
-
+            <form action="http://getgameface.us13.list-manage1.com/subscribe/post" method="post" id="mcform" name="mcform" data-toggle="validator" role="form">
                 <input type="hidden" name="u" value="e0bad2026b1f72bc9490214ff">
                 <input type="hidden" name="id" value="e0bd2ec55e">
-                <fieldset class="form-group">
-                    <label for="InputName">NAME</label>
-                    <input type="text" class="form-control has-feedback" id="InputName" name="FNAME" placeholder="FULL NAME" required>
-                    <div class="help-block with-errors text-uppercase"></div>
-                </fieldset>
 
-                <fieldset class="form-group">
-                    <label for="InputEmail">EMAIL</label>
-                    <input type="email" class="form-control" id="InputEmail" name="EMAIL" placeholder="EMAIL" required>
-                    <div class="help-block with-errors text-uppercase"></div>
-                </fieldset>
-                <fieldset class="form-group">
-                    <input type="text" class="form-control" id="InputSport" name="SPORT" placeholder="SPORT" required>
-                    <div class="help-block with-errors text-uppercase"></div>
-                </fieldset>
-                <fieldset class="form-group">
-                    <input type="text" class="form-control" id="InputAssocitation" name="ASSOC" placeholder="ASSOCIATION" required>
-                    <div class="help-block with-errors text-uppercase"></div>
-                </fieldset>
-                <fieldset class="form-group">
-                    <input type="text" class="form-control" id="InputLevel" name="LEVEL" placeholder="LEVEL OF PLAY (e.g,.A ,AA)" required>
-                    <div class="help-block with-errors text-uppercase"></div>
-                </fieldset>
+                <md-input-container class="md-block">
+                    <label>TEAM NAME</label>
+                    <input required md-no-asterisk id="iname" name="tname" ng-model="vm.Team.name">
+                    <div ng-messages="mcform.tname.$error">
+                        <div ng-message="required">Team name is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>EMAIL</label>
+                    <input required type="email" md-no-asterisk id="imail" name="email" ng-pattern="/^.+@.+\..+$/" ng-model="vm.Team.email">
+                    <div ng-messages="mcform.email.$error">
+                        <div ng-message-exp="['required', 'pattern']">
+                            Email is required in right format.
+                        </div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>SPORT</label>
+                    <input required md-no-asterisk id="isport" name="sport" ng-model="vm.Team.sport">
+                    <div ng-messages="mcform.sport.$error">
+                        <div ng-message="required">Sport is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Association</label>
+                    <input required md-no-asterisk id="iassoc" name="association" ng-model="vm.Team.association">
+                    <div ng-messages="mcform.association.$error">
+                        <div ng-message="required">Association is required.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>LEVEL</label>
+                    <input required md-no-asterisk id="ilevel" name="level" placeholder="LEVEL OF PLAY (e.g,.A ,AA)" ng-model="vm.Team.level">
+                    <div ng-messages="mcform.level.$error">
+                        <div ng-message="required">Level is required.</div>
+                    </div>
+                </md-input-container>
+
 
                 <div id="mce-responses" class="clear">
                     <div class="response" id="mce-error-response" style="display:none"></div>
                     <div class="response" id="mce-success-response" style="display:none"></div>
                 </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                 <!--<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e0bad2026b1f72bc9490214ff_e0bd2ec55e" tabindex="-1" value=""></div>-->
-                <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn">Register</button>
+                <md-button type="submit" name="subscribe" id="mc-embedded-subscribe" class="md-raised md-primary">Register</md-button>
             </form>
             <script type='text/javascript' src='http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
             <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='SPORT';ftypes[2]='text';fnames[3]='ASSOC';ftypes[3]='text';fnames[4]='LEVEL';ftypes[4]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
